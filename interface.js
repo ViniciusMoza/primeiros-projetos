@@ -14,7 +14,7 @@ function handleClick(event){
     let position = square.id;
     
 
-   if( handleMove(position)){;
+   if(handleMove(position)){;
         
      setTimeout(()=>{
         alert("O jogo Acabou - O vencedor foi o jogador " + playerTime);

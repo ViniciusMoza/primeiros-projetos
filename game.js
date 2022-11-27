@@ -5,29 +5,27 @@ let symbols = ['o','x'];
 let gameOver = false;
 
 function handleMove(position){
-    
 
     if (gameOver) {
         return;
     }
-   if (board[position] == '') { 
-    board[position] = symbols[playerTime];
 
-     gameOver = isWin();
-     
-    if(gameOver == false){ 
-    if(playerTime == 0){
-        playerTime = 1;
-    }else{
-        playerTime = 0;
+    if (board[position] == '') { 
+        board[position] = symbols[playerTime];
+
+        gameOver = isWin();
+            
+        if(!gameOver){ 
+            if (playerTime == 0){
+                playerTime = 1;
+            } else {
+                playerTime = 0;
+            }
+        }
+
     }
 
-}
-
-}
-       
     return gameOver;     
-
 }
 
 function isWin(){
@@ -53,9 +51,8 @@ function isWin(){
         if( board[pos1] == board[pos2] &&
             board[pos1] == board[pos3] &&
             board[pos1] != ''){
-
                 return true;
-            }
+        }
     } 
 
     return false;
